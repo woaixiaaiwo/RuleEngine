@@ -8,14 +8,19 @@ import java.util.List;
 
 public class MethodRule extends Rule{
 
+    //是否spring对象
     private Boolean isSpringBean;
 
+    //对象名称
     private String beanName;
 
+    //方法名称
     private String methodName;
 
+    //参数列表
     private List<String> paramList;
 
+    //参数类型列表
     private Class[] paramClass;
 
     public MethodRule(String name, Boolean isSpringBean, String beanName, String methodName) {

@@ -14,22 +14,31 @@ import java.util.Map;
 
 public class RuleExecutor<T> {
 
+    //规则表达式名称
     private String name;
 
+    //规则表达式定义
     private String ruleExpression;
 
+    //规则map
     private Map<String,Rule> ruleMap;
 
+    //返回值表达式
     private String valueExpression;
 
+    //返回方法模式，方法对应的对象是否为spring对象
     private Boolean isSpringBean;
 
+    //返回方法模式，方法对应的对象
     private String beanName;
 
+    //返回方法模式，对应的方法名
     private String methodName;
 
+    //返回方法模式，方法参数
     private List<String> paramList;
 
+    //返回方法模式，方法参数类型数组
     private Class[] paramClass;
 
     public RuleExecutor(String name, String ruleExpression,  String valueExpression) {

@@ -10,7 +10,7 @@ class EngineApplicationTests {
 
 	private final static RuleContext ruleContext = new RuleContext();
 	static {
-		ruleContext.addBeans("person",new Person(17,1,100,"123"));
+		ruleContext.addBeans("person",new Person(18,1,100,"123"));
 		ruleContext.addBeans("test1",new Test1());
 	}
 
@@ -18,7 +18,8 @@ class EngineApplicationTests {
 	@Test
 	void testMethod(){
 		RuleGroupExecutor<String> ruleGroupExecutor = new RuleGroupExecutor(1,ruleContext);
-		ruleGroupExecutor.addRuleExecutor(new RuleExecutor("rule", "method&&noAdult&&male&&!(TheStrongestKing||diamonds)", false,"test1","t1"));
+		ruleGroupExecutor.addRuleExecutor(new RuleExecutor("rule1", "method&&noAdult&&male&&!(TheStrongestKing||diamonds)", false,"test1","t1"));
+		ruleGroupExecutor.addRuleExecutor(new RuleExecutor("rule2", "method&&adult&&male&&!(TheStrongestKing||diamonds)", false,"test1","t3"));
 		ruleGroupExecutor.execute();
 		String result = ruleGroupExecutor.getResult();
 		System.out.println(result);
